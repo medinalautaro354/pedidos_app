@@ -1,0 +1,1 @@
+export const baseUrl = 'https://boiling-hollows-85898.herokuapp.com/';
