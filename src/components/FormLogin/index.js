@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 import {
   FormWrapper,
   FormContainer,
@@ -15,7 +17,7 @@ import {postLogin} from '../../redux/actions/login_actions';
 import { Grid, Button, Icon } from "@material-ui/core";
 import validateInputs from "../../validations/login/index";
 
-const FormLogin = () => {
+const FormLogin = ({isLoading}) => {
 
   const dispatch = useDispatch(); 
 
@@ -95,6 +97,7 @@ const FormLogin = () => {
             Ingresar
           </Button>
         </GridButton>
+        {isLoading ? <CircularProgress/> : null}
       </FormWrapper>
     </FormContainer>
   );

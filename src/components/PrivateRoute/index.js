@@ -1,12 +1,12 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
-import { i18n } from 'services/i18n'
+import { i18n } from '../../services/i18n/index'
 
 const PrivateRoute = ({ component: Component, condition, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      condition() ? (
+      condition ? (
         <Component {...props} />
       ) : (
         <Redirect
