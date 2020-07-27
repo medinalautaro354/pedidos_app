@@ -13,7 +13,7 @@ export default function (state = initiateState, action) {
     }
 
     case POST_LOGIN_ERROR: {
-      return { ...state, isLoginLoading: true, loginResult: action.error.response.data };
+      return { ...state, isLoginLoading: false, loginResult: action.error.response.data };
     }
 
     case POST_LOGIN_COMPLETE: {

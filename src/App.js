@@ -8,11 +8,16 @@ import store from "./redux/store/index";
 import theme from "./config/theme";
 import { i18n } from "./services/i18n";
 
+import PrivateRoute from './components/PrivateRoute/index';
 import Login from "./pages/Login";
+import Home from "./pages/Home";
 
 const browserHistory = createBrowserHistory();
 
 function App() {
+
+  const isLoged = () =>
+  localStorage.getItem('token') ? true : false;
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
@@ -24,7 +29,9 @@ function App() {
                 path={`/${i18n("NAVIGATION").LOGIN}`}
                 component={Login}
               />
-              <Redirect to={`/${i18n("NAVIGATION").LOGIN}`} />
+              <PrivateRoute component={Home} 
+              condition={isLoged()}
+              exact path={'/'} />
             </Switch>
           </React.Fragment>
         </BrowserRouter>

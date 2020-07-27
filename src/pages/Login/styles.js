@@ -35,6 +35,7 @@ export const LoginWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items:center;
   margin-left: auto;
   ${mediaQueries.mobile`
   width: 100%;
