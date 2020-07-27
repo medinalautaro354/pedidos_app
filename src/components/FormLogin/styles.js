@@ -9,12 +9,7 @@ export const FormContainer = styled.form`
   width: 80%;
   height: 275px;
   border-radius: 10px;
-  background: rgb(245, 134, 100);
-  background: linear-gradient(
-    180deg,
-    rgba(245, 134, 100, 1) 0%,
-    rgba(63, 61, 86, 1) 100%
-  );
+  background: rgba(245, 134, 100, 1);
 `;
 
 export const FormWrapper = styled.div`
@@ -23,7 +18,10 @@ export const FormWrapper = styled.div`
     display: flex;
     flex-direction: column;
     -webkit-box-pack: start;
-    justify-content: start;
+    justify-content: center;
+    align-items: center;
+    border-color:rgba(63, 61, 86, 1);
+    border-width: 30px;
 `;
 export const EmailIconStyled = styled(EmailIcon)`
   margin: 10px;
