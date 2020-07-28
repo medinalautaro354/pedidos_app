@@ -30,7 +30,7 @@ function App() {
                 component={Login}
               />
               <PrivateRoute component={Home} 
-              condition={isLoged()}
+              condition={isLoged}
               exact path={'/'} />
             </Switch>
           </React.Fragment>
