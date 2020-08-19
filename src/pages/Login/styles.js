@@ -25,7 +25,7 @@ export const LogoWrapper = styled.div`
 
 export const Logo = styled.img`
   width: 170px;
-  margin: 0px auto 0px auto;
+  margin: 100px 0px 100px auto;
 `
 
 export const LoginWrapper = styled.div`

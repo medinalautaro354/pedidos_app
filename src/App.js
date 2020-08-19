@@ -18,6 +18,7 @@ function App() {
 
   const isLoged = () =>
   localStorage.getItem('token') ? true : false;
+  
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>

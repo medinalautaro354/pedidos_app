@@ -10,6 +10,7 @@ const InputField = ({label, name, value, onChange, type }) =>{
             onChange = {onChange}
             name = {name}
             type = {type}
+            required={true}
         />
     );
 }
