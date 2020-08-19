@@ -1,18 +1,29 @@
 import Validator from 'validator';
  
 const validateInputs = ({email, password}) =>{
+    debugger
     let errors = [];
-    let isValid = false;
+    let isValid = true;
     if(Validator.isEmpty(email)){
-        errors.email = 'El campo es requerido.';
+        let email = {
+            "email" : {
+                "message": 'El campo es requerido.'
+            }
+        }
+        errors.push(email);
     }
 
     if(Validator.isEmpty(password)){
-        errors.password = 'El campo es requerido.';
+        let password = {
+            "password" : {
+                "message": 'El campo es requerido.'
+            }
+        }
+        errors.push(password);
     }
 
-    if(errors.length === 0 ){
-        isValid = true;
+    if(errors.length !== 0){
+        isValid = false;
     }
 
     return{

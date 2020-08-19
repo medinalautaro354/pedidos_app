@@ -11,10 +11,11 @@ import {
   GridButton,
 } from "./styles";
 import InputField from "../InputField";
+import InputPasswordField from '../InputPassword';
 
 import {postLogin} from '../../redux/actions/login_actions';
 
-import { Grid, Button, Icon } from "@material-ui/core";
+import { Grid, Button, Icon, Input } from "@material-ui/core";
 import validateInputs from "../../validations/login/index";
 
 const FormLogin = ({isLoading}) => {
@@ -25,6 +26,7 @@ const FormLogin = ({isLoading}) => {
     email: "",
     password: "",
     errors: [],
+    showPassword: false
   });
 
   const handleInputChange = (e) => {
@@ -64,10 +66,23 @@ const FormLogin = ({isLoading}) => {
     });
   };
 
+  const handleClickShowPassword = () => {
+    setFormData({ ...formData, showPassword: !formData.showPassword });
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <FormContainer onSubmit={loginRequest}>
       <FormWrapper>
-        <Grid>
+        <Grid
+        container
+        direction="row"
+        justify="center"
+        alignItems="center"
+        >
           <EmailIconStyled className={"icon"} />
           <InputField
             label={"Email"}
@@ -77,14 +92,22 @@ const FormLogin = ({isLoading}) => {
             type={"email"}
           />
         </Grid>
-        <Grid>
+        <Grid 
+        container
+        direction="row"
+        justify="center"
+        alignItems="center"
+        >
           <PasswordIcon className={"icon"} />
-          <InputField
+          <InputPasswordField
             label={"Contraseña"}
             name={"password"}
             value={formData.password}
             onChange={handleInputChange}
-            type={"password"}
+            type={formData.showPassword ? 'text' : 'password'}
+            onClick={handleClickShowPassword}
+            onMouseDown={handleMouseDownPassword}
+            showPassword={formData.showPassword}
           />
         </Grid>
         <GridButton>
