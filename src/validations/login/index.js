@@ -1,7 +1,6 @@
 import Validator from 'validator';
  
 const validateInputs = ({email, password}) =>{
-    debugger
     let errors = [];
     let isValid = true;
     if(Validator.isEmpty(email)){

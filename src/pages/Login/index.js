@@ -9,7 +9,6 @@ import { isLoginLoading, loginResult } from "../../redux/selectors/index";
 
 import { Container, Image, LogoWrapper, Logo, LoginWrapper } from "./styles";
 import FormLogin from "../../components/FormLogin";
-import Loader from "../../components/Loader";
 
 const Login = ({history}) => {
   const isLoading = useSelector((state) => isLoginLoading(state));
@@ -30,7 +29,7 @@ const Login = ({history}) => {
 
   useEffect(() => {
     showPopUpError();
-  });
+  }, [loginResponse]);
 
   return (
     <Container>
